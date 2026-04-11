@@ -1,5 +1,3 @@
-require('dotenv').config();
-console.log('JWT KEY:', process.env.ACCESS_TOKEN_KEY);
 const Hapi = require('@hapi/hapi');
 const Jwt = require('@hapi/jwt');
 const ClientError = require('../../Commons/exceptions/ClientError');
@@ -95,7 +93,7 @@ const createServer = async (container) => {
       // penanganan server error sesuai kebutuhan
       const newResponse = h.response({
         status: 'error',
-        message: response.message,
+        message: 'terjadi kegagalan pada server kami',
       });
       newResponse.code(500);
       return newResponse;
