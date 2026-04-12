@@ -1,13 +1,22 @@
-name: Continuous Deployment
+name: CD
 
 on:
   push:
-    branches:
-      - main
+    branches: [ "main" ]
 
 jobs:
   deploy:
     runs-on: ubuntu-latest
 
     steps:
-      - run: echo "Deploy success"
+      - name: SSH Deploy
+        uses: appleboy/ssh-action@v1.0.3
+        with:
+          host: ${{ secrets.SSH_HOST }}
+          username: ${{ secrets.SSH_USER }}
+          key: ${{ secrets.SSH_KEY }}
+          script: |
+            cd /home/azureuser/forum-api-v2/forum-api
+            git pull origin main
+            npm install
+            pm2 restart forum-api --update-env
