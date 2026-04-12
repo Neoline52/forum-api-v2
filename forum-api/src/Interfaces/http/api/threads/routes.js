@@ -5,6 +5,11 @@ const routes = (handler) => [
     handler: handler.postThreadHandler,
     options: {
       auth: 'forum_api_jwt',
+      plugins: {
+        rateLimit: {
+          userLimit: 90,
+        },
+      },
     },
   },
   {
