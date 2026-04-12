@@ -2,21 +2,22 @@ name: CD
 
 on:
   push:
-    branches: [ "main" ]
+    branches:
+      - main
 
 jobs:
   deploy:
     runs-on: ubuntu-latest
 
     steps:
-      - name: SSH Deploy
-        uses: appleboy/ssh-action@v1.0.3
+      - name: Deploy via SSH
+        uses: appleboy/ssh-action@v1.0.0
         with:
           host: ${{ secrets.SSH_HOST }}
           username: ${{ secrets.SSH_USER }}
           key: ${{ secrets.SSH_KEY }}
           script: |
-            cd /home/azureuser/forum-api-v2/forum-api
+            cd ~/forum-api-v2/forum-api
             git pull origin main
             npm install
-            pm2 restart forum-api --update-env
+            pm2 restart forum-api
