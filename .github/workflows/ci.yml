@@ -4,6 +4,11 @@ on:
   pull_request:
     branches: [ "main" ]
 
+# MENAMBAHKAN BAGIAN INI: Mengatur folder kerja default
+defaults:
+  run:
+    working-directory: forum-api
+
 jobs:
   test:
     runs-on: ubuntu-latest
@@ -33,7 +38,6 @@ jobs:
       - name: Install dependencies
         run: npm install
 
-      # Menjalankan migrasi database
       - name: Run database migrations
         run: npm run migrate up
         env:
@@ -43,7 +47,6 @@ jobs:
           PGHOST: localhost
           PGPORT: 5432
 
-      # Menjalankan pengujian (Skenario Berhasil)
       - name: Run tests
         run: npm test
         env:
@@ -52,5 +55,6 @@ jobs:
           PGDATABASE: forumapi_test
           PGHOST: localhost
           PGPORT: 5432
-          # Tambahkan variabel ini agar Jest tidak bingung
+          ACCESS_TOKEN_KEY: supersecretkey
+          REFRESH_TOKEN_KEY: supersecretkey
           NODE_ENV: test
