@@ -1,3 +1,3 @@
-test('CI berhasil fix', () => {
-  expect(1).toBe(1);
+test('CI gagal sengaja', () => {
+  expect(1).toBe(2);
 });
