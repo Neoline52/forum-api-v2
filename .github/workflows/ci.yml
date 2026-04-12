@@ -28,7 +28,7 @@ jobs:
       
       - uses: actions/setup-node@v4
         with:
-          node-version: 18
+          node-version: 18 # Gunakan Node 18 agar stabil dengan project Dicoding
           
       - name: Install dependencies
         run: npm install
@@ -50,5 +50,6 @@ jobs:
           PGDATABASE: forumapi_test
           PGHOST: localhost
           PGPORT: 5432
+          # Variabel environment tambahan yang biasanya dibutuhkan project Forum API
           ACCESS_TOKEN_KEY: supersecretkey
           REFRESH_TOKEN_KEY: supersecretkey
