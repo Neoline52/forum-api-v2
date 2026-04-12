@@ -28,11 +28,12 @@ jobs:
       
       - uses: actions/setup-node@v4
         with:
-          node-version: 18 # Gunakan Node 18 agar stabil dengan project Dicoding
+          node-version: 18
           
       - name: Install dependencies
         run: npm install
 
+      # Menjalankan migrasi database
       - name: Run database migrations
         run: npm run migrate up
         env:
@@ -42,6 +43,7 @@ jobs:
           PGHOST: localhost
           PGPORT: 5432
 
+      # Menjalankan pengujian (Skenario Berhasil)
       - name: Run tests
         run: npm test
         env:
@@ -50,6 +52,5 @@ jobs:
           PGDATABASE: forumapi_test
           PGHOST: localhost
           PGPORT: 5432
-          # Variabel environment tambahan yang biasanya dibutuhkan project Forum API
-          ACCESS_TOKEN_KEY: supersecretkey
-          REFRESH_TOKEN_KEY: supersecretkey
+          # Tambahkan variabel ini agar Jest tidak bingung
+          NODE_ENV: test
