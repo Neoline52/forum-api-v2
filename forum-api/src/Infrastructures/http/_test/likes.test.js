@@ -5,7 +5,7 @@ const createServer = require('../createServer');
 const EndpointTestHelper = require('../../../../tests/EndpointTestHelper');
 const ThreadsTableTestHelper = require('../../../../tests/ThreadsTableTestHelper');
 const CommentsTableTestHelper = require('../../../../tests/CommentsTableTestHelper');
-const LikesTableTestHelper = require('../../../../tests/LikesTableTestHelper');
+const LikesTableTestHelper = require('../../../tests/LikesTableTestHelper');
 
 describe('/threads endpoint', () => {
   let accessToken;
