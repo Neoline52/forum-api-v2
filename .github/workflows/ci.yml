@@ -4,6 +4,11 @@ on:
   pull_request:
     branches: [ "main" ]
 
+# MENAMBAHKAN BAGIAN INI: Mengatur folder kerja default
+defaults:
+  run:
+    working-directory: forum-api
+
 jobs:
   test:
     runs-on: ubuntu-latest
@@ -52,3 +57,4 @@ jobs:
           PGPORT: 5432
           ACCESS_TOKEN_KEY: supersecretkey
           REFRESH_TOKEN_KEY: supersecretkey
+          NODE_ENV: test
