@@ -3,10 +3,10 @@ const pool = require('../../database/postgres/pool');
 const ReplyRepositoryPostgres = require('../ReplyRepositoryPostgres');
 const NewReply = require('../../../Domains/replies/entities/NewReply');
 
-const UsersTableTestHelper = require('../../../tests/UsersTableTestHelper');
-const ThreadsTableTestHelper = require('../../../../tests/ThreadsTableTestHelper');
-const CommentsTableTestHelper = require('../../../../tests/CommentsTableTestHelper');
-const RepliesTableTestHelper = require('../../../../tests/RepliesTableTestHelper');
+const UsersTableTestHelper = require('@tests/UsersTableTestHelper');
+const ThreadsTableTestHelper = require('@tests/ThreadsTableTestHelper');
+const CommentsTableTestHelper = require('@tests/CommentsTableTestHelper');
+const RepliesTableTestHelper = require('@tests/RepliesTableTestHelper');
 
 const NotFoundError = require('../../../Commons/exceptions/NotFoundError');
 const AuthorizationError = require('../../../Commons/exceptions/AuthorizationError');

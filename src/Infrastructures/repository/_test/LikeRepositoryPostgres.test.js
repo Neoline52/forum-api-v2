@@ -2,10 +2,10 @@ const pool = require('../../database/postgres/pool');
 
 const LikeRepositoryPostgres = require('../LikeRepositoryPostgres');
 
-const UsersTableTestHelper = require('../../../tests/UsersTableTestHelper');
-const ThreadsTableTestHelper = require('../../../../tests/ThreadsTableTestHelper');
-const CommentsTableTestHelper = require('../../../../tests/CommentsTableTestHelper');
-const LikesTableTestHelper = require('../../../../tests/LikesTableTestHelper');
+const UsersTableTestHelper = require('@tests/UsersTableTestHelper');
+const ThreadsTableTestHelper = require('@tests/ThreadsTableTestHelper');
+const CommentsTableTestHelper = require('@tests/CommentsTableTestHelper');
+const LikesTableTestHelper = require('@tests/LikesTableTestHelper');
 
 describe('LikeRepositoryPostgres', () => {
   const user1 = {

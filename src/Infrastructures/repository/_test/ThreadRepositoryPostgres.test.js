@@ -3,8 +3,8 @@ const pool = require('../../database/postgres/pool');
 const ThreadRepositoryPostgres = require('../ThreadRepositoryPostgres');
 const NewThread = require('../../../Domains/threads/entities/NewThread');
 
-const UsersTableTestHelper = require('../../../tests/UsersTableTestHelper');
-const ThreadsTableTestHelper = require('../../../../tests/ThreadsTableTestHelper');
+const UsersTableTestHelper = require('@tests/UsersTableTestHelper');
+const ThreadsTableTestHelper = require('@tests/ThreadsTableTestHelper');
 
 const NotFoundError = require('../../../Commons/exceptions/NotFoundError');
 

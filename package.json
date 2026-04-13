@@ -6,7 +6,7 @@
   "scripts": {
     "start": "node src/app.js",
     "start:dev": "nodemon src/app.js",
-   "test": "jest forum-api/tests/ci.test.js",
+   "test": "jest --runInBand --coverage",
     "test:watch:change": "jest --watch --setupFiles ./src/Commons/setupEnv.js -i",
     "test:watch": "jest --watchAll --coverage --setupFiles ./src/Commons/setupEnv.js -i",
     "migrate": "node-pg-migrate",

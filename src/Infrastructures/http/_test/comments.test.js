@@ -2,10 +2,10 @@ const pool = require('../../database/postgres/pool');
 const container = require('../../container');
 const createServer = require('../createServer');
 
-const EndpointTestHelper = require('../../../../tests/EndpointTestHelper');
-const UsersTableTestHelper = require('../../../tests/UsersTableTestHelper');
-const ThreadsTableTestHelper = require('../../../../tests/ThreadsTableTestHelper');
-const CommentsTableTestHelper = require('../../../tests/CommentsTableTestHelper');
+const EndpointTestHelper = require('@tests/EndpointTestHelper');
+const UsersTableTestHelper = require('@tests/UsersTableTestHelper');
+const ThreadsTableTestHelper = require('@tests/ThreadsTableTestHelper');
+const CommentsTableTestHelper = require('@tests/CommentsTableTestHelper');
 
 describe('/threads/{threadId}/comments endpoint', () => {
   let accessToken;
