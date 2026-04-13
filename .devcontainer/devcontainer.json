@@ -1,0 +1,19 @@
+{
+  "dockerComposeFile": "docker-compose.yml",
+  "service": "devcontainer",
+  "workspaceFolder": "/workspaces/forum-api",
+  "customizations": {
+    "vscode": {
+      "extensions": [
+        "usernamehw.errorlens",
+        "streetsidesoftware.code-spell-checker",
+        "eamodio.gitlens",
+        "VisualStudioExptTeam.vscodeintellicode",
+        "esbenp.prettier-vscode",
+        "dbaeumer.vscode-eslint",
+        "streetsidesoftware.code-spell-checker-indonesian",
+        "mikestead.dotenv"
+      ]
+    }
+  }
+}
