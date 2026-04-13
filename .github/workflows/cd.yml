@@ -10,8 +10,8 @@ jobs:
     runs-on: ubuntu-latest
 
     steps:
-      - run: echo "Deploying..."
-      - run: exit 1
+      - uses: actions/checkout@v4
+
       - name: Deploy via SSH
         uses: appleboy/ssh-action@v1.0.0
         with:
@@ -22,5 +22,6 @@ jobs:
             cd ~/forum-api-v2/forum-api
             git pull origin main
             npm install
+            npm run migrate:test
             pm2 restart forum-api
 
